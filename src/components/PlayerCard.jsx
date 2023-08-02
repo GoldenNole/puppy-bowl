@@ -1,9 +1,26 @@
-import React from 'react';
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 
-const PlayerCard = ({ player, fetchSinglePlayer, removePlayer }) => {
+const PlayerCard = ({ player, fetchSinglePlayer }) => {
   const navigate = useNavigate();
+
+  // const removePlayer = async (playerId) => {
+  //   try {
+  //     const response = await fetch(`${APIURL}/${playerId}`, {
+  //       method: "DELETE"
+  //     });
+  //     const player = await response.json();
+  //     console.log(player);
+  //     fetchAllPlayers();
+  //     window.location.reload();
+  //   } catch (err) {
+  //     console.error(
+  //       `Whoops, trouble removing player #${playerId} from the roster!`,
+  //       err
+  //     );
+  //   }
+  // };
+
   return (
     <div className="player">
       <div className="players-container">

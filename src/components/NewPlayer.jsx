@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-const NewPlayer = () => {
+const NewPlayer = ({players, setPlayers}) => {
   const APIURL = `https://fsa-puppy-bowl.herokuapp.com/api/2302-ACC-CT-WEB-PT-A/players`;
   const [name, setName] = useState("");
   const [breed, setBreed] = useState("");
   const [status, setStatus] = useState("");
   const [imageURL, setImgURL] = useState("");
-
   // ***************************************Add New Player***************************************
+  
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -25,7 +25,16 @@ const NewPlayer = () => {
       });
 
       const result = await response.json();
-      console.log(result);
+      console.log("newPlayer", result);
+      const response2 = await fetch(APIURL);
+      const data = await response2.json();
+      const playerArray = data.data.players;
+      setPlayers(playerArray);
+      setName("");
+      setBreed("");
+      setStatus("");
+      setImgURL("");
+      
     } catch (err) {
       console.error("Oops, something went wrong with adding that player!", err);
     }

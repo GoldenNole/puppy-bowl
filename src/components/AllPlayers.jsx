@@ -10,9 +10,7 @@ const APIURL = `https://fsa-puppy-bowl.herokuapp.com/api/2302-ACC-CT-WEB-PT-A/pl
 const AllPlayers = () => {
   const [players, setPlayers] = useState([]);
 
-  useEffect(() => {
-    fetchAllPlayers();
-  }, []);
+  useEffect(() => {fetchAllPlayers();}, [players]);
 
   const fetchAllPlayers = async () => {
     try {
@@ -28,7 +26,7 @@ const AllPlayers = () => {
   return (
     <div>
       <Header />
-      <NewPlayer />
+      <NewPlayer players={players} setPlayers={setPlayers} />
       <Search players={players} />
     </div>
   );
