@@ -1,27 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import AllPlayers from './components/AllPlayers';
-import Header from './components/Header';
-import NewPlayer from './components/NewPlayer';
-import SinglePlayer from './components/SinglePlayer';
-
-//const cohortName = "2302-ACC-CT-WEB-PT-A";
-
+import { Routes, Route } from "react-router-dom";
+import AllPlayers from "./components/AllPlayers";
+import SinglePlayer from "./components/SinglePlayer";
 const App = () => {
-
-  return (
-    <div>
-      <Header />
-      <NewPlayer />
-      <AllPlayers />
-    </div>
-  );
-};
-
+    return (
+        <div>
+            <Routes>
+                <Route path="/" element={<AllPlayers />} />
+                <Route path="/:userId" element={<SinglePlayer />} />
+            </Routes>
+        </div>
+    );
+}
 export default App;
-
-/* <div>
-<Header />
-<NewPlayer />
-<AllPlayers />
-</div>
-*/

@@ -3,6 +3,8 @@ import RenderPlayers from "./RenderPlayers";
 //import { fetchAllPlayers } from "../API/index"
 import React, { useState, useEffect } from 'react';
 import Search from "./Search";
+import Header from "./Header";
+import NewPlayer from "./NewPlayer";
 const APIURL = `https://fsa-puppy-bowl.herokuapp.com/api/2302-ACC-CT-WEB-PT-A/players`;
 
 const AllPlayers = () => {
@@ -25,6 +27,8 @@ const AllPlayers = () => {
 
     return (
       <div>
+        <Header />
+        <NewPlayer />
         <Search players={players} />
       </div>
     );

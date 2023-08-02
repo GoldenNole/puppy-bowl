@@ -16,7 +16,7 @@ const Search = ({ players }) => {
 
   return (
     <section>
-      <div className="players-container">
+      <div>
         <h2>Search</h2>
         <input 
           type = "search" 
