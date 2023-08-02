@@ -10,10 +10,6 @@ const NewPlayer = () => {
   // ***************************************Add New Player***************************************
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log("name", name),
-    console.log("breed", breed),
-    console.log("status", status),
-    console.log("imageURL", imageURL)
     try {
       const response = await fetch(APIURL, {
         method: "POST",
@@ -35,29 +31,29 @@ const NewPlayer = () => {
     }
   };
 
-  return(
+  return (
     <div>
       <form className="players-container" onSubmit={handleSubmit} >
         <h2> Add Dog </h2>
-        <img id ="dogimg" src= "https://media.istockphoto.com/id/639255368/vector/vector-black-silhouette-of-a-dog.jpg?s=612x612&w=0&k=20&c=LxmhSbJvDDhjkC56P1P9rW-SdVXejpTZroOd_6WlYDk=" alt="dog" />
+        <img id="dogimg" src="https://media.istockphoto.com/id/639255368/vector/vector-black-silhouette-of-a-dog.jpg?s=612x612&w=0&k=20&c=LxmhSbJvDDhjkC56P1P9rW-SdVXejpTZroOd_6WlYDk=" alt="dog" />
 
-        <label value = {name} onChange={(e) => setName(e.target.value)} >Name: <input /> </label>
-        <br/>
-
-        <label value = {breed} onChange={(e) => setBreed(e.target.value)}>Breed:<input /> </label>
+        <label value={name} onChange={(e) => setName(e.target.value)} >Name: <input /> </label>
         <br />
 
-        <label value = {status} onChange={(e) => setStatus(e.target.value)}>Status: <input />  </label>
-        <br/>
+        <label value={breed} onChange={(e) => setBreed(e.target.value)}>Breed:<input /> </label>
+        <br />
 
-        <label value = {imageURL} onChange={(e) => setImgURL(e.target.value)}>Image: <input /></label>
-        <br/>
+        <label value={status} onChange={(e) => setStatus(e.target.value)}>Status: <input />  </label>
+        <br />
+
+        <label value={imageURL} onChange={(e) => setImgURL(e.target.value)}>Image: <input /></label>
+        <br />
 
         <button className="btn">Submit</button>
       </form>
     </div>
-        )
-  
+  )
+
 };
 
 export default NewPlayer;
