@@ -18,10 +18,10 @@ const Search = ({ players }) => {
     <section>
       <div>
         <h2>Search</h2>
-        <input 
-          type = "search" 
-          placeholder = "Search Dogs" 
-          onChange = {handleChange}
+        <input
+          type="search"
+          placeholder="Search Dogs"
+          onChange={handleChange}
         />
       </div>
       <RenderPlayers players={filteredPlayers} />

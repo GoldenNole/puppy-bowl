@@ -10,7 +10,7 @@ const PlayerCard = ({ player, fetchSinglePlayer, removePlayer }) => {
         <h2>{player.name}</h2>
         <img src={player.imageUrl} alt={player.name} />
         <button className="details-button btn" onClick={() => navigate(`/${player.id}`)}>See Details</button>
-        
+
         <button
           className="delete-button btn"
           onClick={() => removePlayer(player.id)}
