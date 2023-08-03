@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { fetchAllPlayers } from '../API';
 
 const NewPlayer = ({ players, setPlayers }) => {
   const APIURL = `https://fsa-puppy-bowl.herokuapp.com/api/2302-ACC-CT-WEB-PT-A/players`;

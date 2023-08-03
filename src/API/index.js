@@ -1,6 +1,3 @@
-const playerContainer = document.getElementById("all-players-container");
-const newPlayerFormContainer = document.getElementById("new-player-form");
-
 // Add your cohort name to the cohortName variable below, replacing the 'COHORT-NAME' placeholder
 const cohortName = "2302-ACC-CT-WEB-PT-A";
 // Use the APIURL variable for fetch requests

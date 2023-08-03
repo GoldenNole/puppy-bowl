@@ -11,7 +11,7 @@ const AllPlayers = () => {
   const [players, setPlayers] = useState([]);
 
   useEffect(() => {fetchAllPlayers();}, [players]);
-
+  
   const fetchAllPlayers = async () => {
     try {
       const response = await fetch(APIURL);
