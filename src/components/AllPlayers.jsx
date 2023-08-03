@@ -1,6 +1,3 @@
-import PlayerCard from "./PlayerCard";
-import RenderPlayers from "./RenderPlayers";
-//import { fetchAllPlayers } from "../API/index"
 import React, { useState, useEffect } from 'react';
 import Search from "./Search";
 import Header from "./Header";
