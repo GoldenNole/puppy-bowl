@@ -1,7 +1,7 @@
 import RenderPlayers from "./RenderPlayers";
 import React, { useState } from 'react';
 
-const Search = ({ players }) => {
+const Search = ({ players, setPlayers }) => {
 
   const [searchField, setSearchField] = useState("");
 
@@ -24,7 +24,7 @@ const Search = ({ players }) => {
           onChange={handleChange}
         />
       </div>
-      <RenderPlayers players={filteredPlayers} />
+      <RenderPlayers players={filteredPlayers} setPlayers={setPlayers} />
     </section>
   );
 

@@ -27,7 +27,7 @@ const AllPlayers = () => {
     <div>
       <Header />
       <NewPlayer players={players} setPlayers={setPlayers} />
-      <Search players={players} />
+      <Search players={players} setPlayers={setPlayers} />
     </div>
   );
 };

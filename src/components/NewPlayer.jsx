@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 
-const NewPlayer = ({players, setPlayers}) => {
+const NewPlayer = ({ players, setPlayers }) => {
   const APIURL = `https://fsa-puppy-bowl.herokuapp.com/api/2302-ACC-CT-WEB-PT-A/players`;
   const [name, setName] = useState("");
   const [breed, setBreed] = useState("");
-  const [status, setStatus] = useState("");
+  const [status, setStatus] = useState("bench");
   const [imageURL, setImgURL] = useState("");
+  console.log("status", status)
+  console.log("name", name)
   // ***************************************Add New Player***************************************
-  
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -34,7 +36,7 @@ const NewPlayer = ({players, setPlayers}) => {
       setBreed("");
       setStatus("");
       setImgURL("");
-      
+
     } catch (err) {
       console.error("Oops, something went wrong with adding that player!", err);
     }
@@ -52,7 +54,12 @@ const NewPlayer = ({players, setPlayers}) => {
         <label value={breed} onChange={(e) => setBreed(e.target.value)}>Breed:<input /> </label>
         <br />
 
-        <label value={status} onChange={(e) => setStatus(e.target.value)}>Status: <input />  </label>
+        <label>Status:
+          <select value={status} onChange={(e) => setStatus(e.target.value)}>
+            <option value="bench">Bench</option>
+            <option value="field">Field</option>
+          </select>
+          </label>
         <br />
 
         <label value={imageURL} onChange={(e) => setImgURL(e.target.value)}>Image: <input /></label>
